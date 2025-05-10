@@ -16,7 +16,7 @@ const PokeballImage: React.FC<Props> = ({ size, posX, posY }) => {
       top={posY}
       height={size}
       sx={{
-        opacity: "0.05",
+        opacity: "0.04",
         transform: "translate(-50%, -50%)",
         userSelect: "none",
       }}>
@@ -25,6 +25,7 @@ const PokeballImage: React.FC<Props> = ({ size, posX, posY }) => {
         style={{
           height: "100%",
         }}
+        draggable={false}
         alt="pokeball"
       />
     </Box>
