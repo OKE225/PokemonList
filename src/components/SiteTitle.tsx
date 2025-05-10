@@ -11,9 +11,7 @@ const SiteTitle = () => {
         variant="h2"
         component="h1"
         fontWeight="bold"
-        color={grey[50]}
-        textAlign="center"
-        mt={2}>
+        color={grey[50]}>
         Pokemon List
       </Typography>
     </Link>

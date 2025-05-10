@@ -1,6 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 import SiteTitle from "../../components/SiteTitle";
+import BackgroundPokeballs from "../../components/BackgroundPokeballs";
 
 const Home = () => {
   return (
@@ -10,8 +11,18 @@ const Home = () => {
       }}
       width="100%"
       height="100vh"
-      position="absolute">
-      <SiteTitle />
+      position="absolute"
+      overflow="hidden">
+      <BackgroundPokeballs />
+      <Box
+        id="home"
+        position="absolute"
+        width="100%"
+        height="100vh"
+        textAlign="center">
+        <SiteTitle />
+        <Box id="home-content"></Box>
+      </Box>
     </Box>
   );
 };
