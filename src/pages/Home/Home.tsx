@@ -11,17 +11,20 @@ const Home = () => {
       }}
       width="100%"
       height="100vh"
-      position="absolute"
+      // position="absolute"
       overflow="hidden">
-      <BackgroundPokeballs />
+      <BackgroundPokeballs opacity="0.1" />
       <Box
         id="home"
         position="absolute"
         width="100%"
-        height="100vh"
+        // height="100vh"
         textAlign="center">
         <SiteTitle />
-        <Box id="home-content"></Box>
+        <Box id="home-content">
+          <Box className="description"></Box>
+          <Box className="charizard-image"></Box>
+        </Box>
       </Box>
     </Box>
   );

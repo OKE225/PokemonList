@@ -6,7 +6,7 @@ import BackgroundPokeballs from "../../components/BackgroundPokeballs";
 const Pokemons = () => {
   return (
     <Box bgcolor="#0a0a0a" width="100%" minHeight="100%" position="absolute">
-      <BackgroundPokeballs />
+      <BackgroundPokeballs opacity="0.04" />
       <Box id="pokemons" position="absolute" width="100%" textAlign="center">
         <SiteTitle />
       </Box>
