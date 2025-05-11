@@ -2,6 +2,8 @@ import React from "react";
 import { Box } from "@mui/material";
 import SiteTitle from "../../components/SiteTitle";
 import BackgroundPokeballs from "../../components/BackgroundPokeballs";
+import CharizardImage from "./CharizardImage";
+import Description from "./Description";
 
 const Home = () => {
   return (
@@ -10,20 +12,22 @@ const Home = () => {
         background: "radial-gradient(#E14318, #EE8328)",
       }}
       width="100%"
-      height="100vh"
-      // position="absolute"
-      overflow="hidden">
+      height="100vh">
       <BackgroundPokeballs opacity="0.1" />
       <Box
         id="home"
         position="absolute"
-        width="100%"
-        // height="100vh"
+        overflow="hidden"
+        height="100vh"
         textAlign="center">
         <SiteTitle />
-        <Box id="home-content">
-          <Box className="description"></Box>
-          <Box className="charizard-image"></Box>
+        <Box
+          id="home-content"
+          display="flex"
+          alignItems="center"
+          height="calc(100% - 90px)">
+          <Description />
+          <CharizardImage />
         </Box>
       </Box>
     </Box>
