@@ -12,7 +12,9 @@ const Home = () => {
         background: "radial-gradient(#E14318, #EE8328)",
       }}
       width="100%"
-      height="100vh">
+      height="100vh"
+      display="flex"
+      justifyContent="center">
       <BackgroundPokeballs opacity="0.1" />
       <Box
         id="home"
@@ -25,6 +27,7 @@ const Home = () => {
           id="home-content"
           display="flex"
           alignItems="center"
+          justifyContent="center"
           height="calc(100% - 90px)">
           <Description />
           <CharizardImage />

@@ -6,7 +6,12 @@ import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 
 const Description = () => {
   return (
-    <Box className="description" width="40%" textAlign="left" marginLeft={8}>
+    <Box
+      className="description"
+      width="40%"
+      maxWidth={1000}
+      textAlign="left"
+      marginLeft={8}>
       <Typography variant="body1" color={grey[50]}>
         Welcome to our Pokémon website, your ultimate destination to explore the
         fascinating world of Pokémon! Here, you can browse a comprehensive list
