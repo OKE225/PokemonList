@@ -6,10 +6,9 @@ type Props = {
   size: string;
   posX: string;
   posY: string;
-  opacity: string;
 };
 
-const PokeballImage: React.FC<Props> = ({ size, posX, posY, opacity }) => {
+const PokeballImage: React.FC<Props> = ({ size, posX, posY }) => {
   return (
     <Box
       position="fixed"
@@ -17,7 +16,7 @@ const PokeballImage: React.FC<Props> = ({ size, posX, posY, opacity }) => {
       top={posY}
       height={size}
       sx={{
-        opacity: opacity,
+        opacity: 0.1,
         transform: "translate(-50%, -50%)",
         userSelect: "none",
       }}>

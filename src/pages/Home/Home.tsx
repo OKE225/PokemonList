@@ -15,7 +15,7 @@ const Home = () => {
       height="100vh"
       display="flex"
       justifyContent="center">
-      <BackgroundPokeballs opacity="0.1" />
+      <BackgroundPokeballs />
       <Box
         id="home"
         position="absolute"
