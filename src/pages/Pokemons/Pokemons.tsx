@@ -1,25 +1,26 @@
-import { Box, CircularProgress, Typography } from "@mui/material";
+import { Box, CircularProgress, Grid } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import SiteTitle from "../../components/SiteTitle";
 import BackgroundPokeballs from "../../components/BackgroundPokeballs";
+import PokemonCard from "../../components/PokemonCard";
 
-interface Pokemon {
+interface PokemonsObject {
   name: string;
   url: string;
 }
 
-interface PokemonResponse {
-  results: Pokemon[];
+interface PokemonsResponse {
+  results: PokemonsObject[];
 }
 
 const Pokemons = () => {
-  const [pokemonList, setPokemonList] = useState<Pokemon[] | null>(null);
+  const [pokemonList, setPokemonList] = useState<PokemonsObject[] | null>(null);
 
   useEffect(() => {
     const URL = "https://pokeapi.co/api/v2/pokemon/";
     fetch(URL)
       .then((response) => response.json())
-      .then((data: PokemonResponse) => setPokemonList(data.results))
+      .then((data: PokemonsResponse) => setPokemonList(data.results))
       .catch((error) => console.error("Error:", error));
   }, []);
 
@@ -39,13 +40,24 @@ const Pokemons = () => {
         overflow="hidden"
         textAlign="center">
         <SiteTitle />
-        <Box id="pokemons-list" color="white" textAlign="left">
+        <Box
+          id="pokemons-list"
+          width="80%"
+          margin="0 auto"
+          color="white"
+          mt={5}>
           {pokemonList ? (
-            <Box>
+            <Grid container spacing={8}>
               {pokemonList.map((pokemon) => (
-                <Typography variant="body1">{pokemon.name}</Typography>
+                <Grid size={4}>
+                  <PokemonCard
+                    key={pokemon.name}
+                    name={pokemon.name}
+                    url={pokemon.url}
+                  />
+                </Grid>
               ))}
-            </Box>
+            </Grid>
           ) : (
             <CircularProgress color="inherit" />
           )}
