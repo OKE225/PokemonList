@@ -43,11 +43,11 @@ const Pokemons = () => {
         <Box
           id="pokemons-list"
           width="80%"
-          margin="0 auto"
+          margin="100px auto"
           color="white"
           mt={5}>
           {pokemonList ? (
-            <Grid container spacing={8}>
+            <Grid container spacing={10}>
               {pokemonList.map((pokemon) => (
                 <Grid size={4}>
                   <PokemonCard
