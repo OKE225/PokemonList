@@ -42,7 +42,7 @@ const Pokemons = () => {
         <SiteTitle />
         <Box
           id="pokemons-list"
-          width="80%"
+          width="70%"
           margin="100px auto"
           color="white"
           mt={5}>
