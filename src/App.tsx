@@ -15,5 +15,3 @@ const App = () => {
 };
 
 export default App;
-
-// https://www.perplexity.ai/search/czesc-chce-zebys-pomogl-mi-zro-mu_gOHTKSB.qaSLx.b3euA

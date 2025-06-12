@@ -1,28 +1,48 @@
 import { Box, CircularProgress, Grid } from "@mui/material";
-import React, { useEffect, useState } from "react";
+import React, { ChangeEvent, useEffect, useState } from "react";
 import SiteTitle from "../../components/SiteTitle";
 import BackgroundPokeballs from "../../components/BackgroundPokeballs";
 import PokemonCard from "../../components/PokemonCard";
+import PaginationElement from "./PaginationElement";
 
-interface PokemonsObject {
+interface PokemonObject {
   name: string;
   url: string;
 }
 
 interface PokemonsResponse {
-  results: PokemonsObject[];
+  count: number;
+  results: PokemonObject[];
 }
 
 const Pokemons = () => {
-  const [pokemonList, setPokemonList] = useState<PokemonsObject[] | null>(null);
+  const [pokemonList, setPokemonList] = useState<PokemonObject[] | null>(null);
+  const [paginationData, setPaginationData] = useState<{
+    count: number;
+  } | null>(null);
+  const [currentPage, setCurrentPage] = useState<number>(1);
+
+  const fetchPokemons = async (url: string) => {
+    fetch(url)
+      .then((response) => response.json())
+      .then((data: PokemonsResponse) => {
+        setPokemonList(data.results);
+        setPaginationData({
+          count: data.count,
+        });
+      })
+      .catch((error) => console.error("Error:", error));
+  };
 
   useEffect(() => {
-    const URL = "https://pokeapi.co/api/v2/pokemon/";
-    fetch(URL)
-      .then((response) => response.json())
-      .then((data: PokemonsResponse) => setPokemonList(data.results))
-      .catch((error) => console.error("Error:", error));
-  }, []);
+    const offset = (currentPage - 1) * 20;
+    const url = `https://pokeapi.co/api/v2/pokemon/?offset=${offset}&limit=20`;
+    fetchPokemons(url);
+  }, [currentPage]);
+
+  const handlePageChange = (_event: ChangeEvent<unknown>, page: number) => {
+    setCurrentPage(page);
+  };
 
   return (
     <Box
@@ -49,12 +69,8 @@ const Pokemons = () => {
           {pokemonList ? (
             <Grid container spacing={10}>
               {pokemonList.map((pokemon) => (
-                <Grid size={4}>
-                  <PokemonCard
-                    key={pokemon.name}
-                    name={pokemon.name}
-                    url={pokemon.url}
-                  />
+                <Grid size={4} key={pokemon.name}>
+                  <PokemonCard name={pokemon.name} url={pokemon.url} />
                 </Grid>
               ))}
             </Grid>
@@ -62,6 +78,15 @@ const Pokemons = () => {
             <CircularProgress color="inherit" />
           )}
         </Box>
+        {paginationData && (
+          <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
+            <PaginationElement
+              count={paginationData.count}
+              currentPage={currentPage}
+              onPageChange={handlePageChange}
+            />
+          </Box>
+        )}
       </Box>
     </Box>
   );
