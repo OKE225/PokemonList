@@ -1,7 +1,6 @@
 import { Box } from "@mui/material";
 import React from "react";
 import charizard from "../../assets/charizard.png";
-import { grey } from "@mui/material/colors";
 
 const CharizardImage = () => {
   return (
@@ -16,7 +15,6 @@ const CharizardImage = () => {
         src={charizard}
         style={{
           width: "100%",
-          filter: `drop-shadow(0 5px 5px ${grey[900]})`,
           userSelect: "none",
         }}
         alt="charizard"

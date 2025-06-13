@@ -16,7 +16,7 @@ const PokeballImage: React.FC<Props> = ({ size, posX, posY }) => {
       top={posY}
       height={size}
       sx={{
-        opacity: 0.1,
+        opacity: 0.075,
         transform: "translate(-50%, -50%)",
         userSelect: "none",
       }}>

@@ -24,25 +24,26 @@ const PaginationElement: React.FC<Props> = ({
       size="large"
       sx={{
         "& .MuiPaginationItem-root": {
-          color: "white",
-          borderColor: "rgba(255, 255, 255, 0.3)",
+          color: "rgba(255, 255, 255, 0.9)", // jasna biel
+          borderColor: "rgba(255, 255, 255, 0.4)", // jasny szary
           "&:hover": {
-            backgroundColor: "rgba(255, 255, 255, 0.1)",
-            borderColor: "rgba(255, 255, 255, 0.5)",
+            backgroundColor: "rgba(255, 255, 255, 0.15)", // delikatny biały hover
+            borderColor: "rgba(255, 255, 255, 0.7)", // jaśniejszy szary border
           },
           "&.Mui-selected": {
-            backgroundColor: "#1976d2",
-            color: "white",
-            borderColor: "#1976d2",
+            backgroundColor: "rgba(255, 255, 255, 0.9)", // prawie białe tło
+            color: "#333", // ciemniejszy tekst dla kontrastu
+            borderColor: "rgba(255, 255, 255, 0.9)",
             "&:hover": {
-              backgroundColor: "#1565c0",
+              backgroundColor: "rgba(255, 255, 255, 1)", // pełna biel na hover
             },
           },
           "&.Mui-disabled": {
-            color: "rgba(255, 255, 255, 0.3)",
+            color: "rgba(255, 255, 255, 0.3)", // bardzo jasny szary
             borderColor: "rgba(255, 255, 255, 0.1)",
           },
         },
+        marginBottom: "40px",
       }}
     />
   );

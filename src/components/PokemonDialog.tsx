@@ -1,5 +1,8 @@
-import { Box, Dialog, DialogContent, Typography } from "@mui/material";
+import { Box, Dialog, DialogContent, Tooltip, Typography } from "@mui/material";
 import React from "react";
+
+import ScaleIcon from "@mui/icons-material/Scale";
+import ExpandIcon from "@mui/icons-material/Expand";
 
 interface Props {
   isOpen: boolean;
@@ -21,10 +24,10 @@ const PokemonDialog: React.FC<Props> = ({
   chips,
 }) => {
   return (
-    <Dialog open={isOpen} onClose={onClose} maxWidth="sm">
+    <Dialog open={isOpen} onClose={onClose} maxWidth="xs">
       <DialogContent
         sx={{
-          background: "#0a0a0a",
+          background: `radial-gradient(circle at center bottom, ${pokemon.typeColor} 0%, rgba(0, 0, 0, 0.9) 50%)`,
           border: `2px solid ${pokemon.typeColor}`,
         }}>
         <Box
@@ -33,28 +36,36 @@ const PokemonDialog: React.FC<Props> = ({
           flexDirection="column"
           color="white"
           mt={2}>
-          <Typography variant="h2" textTransform="capitalize">
+          <Typography variant="h2" textTransform="capitalize" gutterBottom>
             {pokemon.name}
           </Typography>
-          <Box className="basic-info" display="flex">
-            <Typography variant="body1" mr={1}>
-              height: {pokemon.height}m
-            </Typography>
-            <Typography variant="body1" ml={1}>
-              weight: {pokemon.weight}kg
-            </Typography>
+          <Box className="basic-info" display="flex" alignItems="center" mb={3}>
+            <Tooltip title="weight" placement="top" arrow followCursor>
+              <Box component="span" display="flex" mr={5}>
+                <ScaleIcon />
+                <Typography variant="body1" ml={1}>
+                  {pokemon.weight}kg
+                </Typography>
+              </Box>
+            </Tooltip>
+            <Tooltip title="height" placement="top" arrow followCursor>
+              <Box component="span" display="flex">
+                <ExpandIcon />
+                <Typography variant="body1" ml={1}>
+                  {pokemon.height}m
+                </Typography>
+              </Box>
+            </Tooltip>
           </Box>
-          <Box className="pokemon-types" mt={2}>
-            {chips}
-          </Box>
-          <Box width="80%" m="0 auto" mb={3}>
+          <Box className="pokemon-types">{chips}</Box>
+          <Box width="100%" m="0 auto" mb={3}>
             <img
               src={pokemon.picture}
               alt={pokemon.name}
               style={{
                 width: "100%",
                 userSelect: "none",
-                filter: `drop-shadow(0 0 10px ${pokemon.typeColor})`,
+                filter: `drop-shadow(0 0 20px ${pokemon.typeColor})`,
               }}
               draggable={false}
             />

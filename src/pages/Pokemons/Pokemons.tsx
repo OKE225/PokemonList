@@ -67,7 +67,7 @@ const Pokemons = () => {
           color="white"
           mt={5}>
           {pokemonList ? (
-            <Grid container spacing={10}>
+            <Grid container spacing={4} mt={15}>
               {pokemonList.map((pokemon) => (
                 <Grid size={4} key={pokemon.name}>
                   <PokemonCard name={pokemon.name} url={pokemon.url} />
