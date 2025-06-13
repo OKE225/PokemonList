@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/PokemonList/static/css/main.abc039f0.css",
-    "main.js": "/PokemonList/static/js/main.e17d4d9f.js",
+    "main.css": "/PokemonList/static/css/main.b968b064.css",
+    "main.js": "/PokemonList/static/js/main.47373578.js",
     "static/media/charizard.png": "/PokemonList/static/media/charizard.1f200eba0d45411d9443.png",
     "static/media/pokeball.png": "/PokemonList/static/media/pokeball.154f15ebd34ddd333e3d.png",
     "index.html": "/PokemonList/index.html",
-    "main.abc039f0.css.map": "/PokemonList/static/css/main.abc039f0.css.map",
-    "main.e17d4d9f.js.map": "/PokemonList/static/js/main.e17d4d9f.js.map"
+    "main.b968b064.css.map": "/PokemonList/static/css/main.b968b064.css.map",
+    "main.47373578.js.map": "/PokemonList/static/js/main.47373578.js.map"
   },
   "entrypoints": [
-    "static/css/main.abc039f0.css",
-    "static/js/main.e17d4d9f.js"
+    "static/css/main.b968b064.css",
+    "static/js/main.47373578.js"
   ]
 }
