@@ -21,29 +21,27 @@ const PaginationElement: React.FC<Props> = ({
       onChange={onPageChange}
       variant="outlined"
       shape="rounded"
-      size="large"
       sx={{
         "& .MuiPaginationItem-root": {
-          color: "rgba(255, 255, 255, 0.9)", // jasna biel
-          borderColor: "rgba(255, 255, 255, 0.4)", // jasny szary
+          color: "rgba(255, 255, 255, 0.9)",
+          borderColor: "rgba(255, 255, 255, 0.4)",
           "&:hover": {
-            backgroundColor: "rgba(255, 255, 255, 0.15)", // delikatny biały hover
-            borderColor: "rgba(255, 255, 255, 0.7)", // jaśniejszy szary border
+            backgroundColor: "rgba(255, 255, 255, 0.15)",
+            borderColor: "rgba(255, 255, 255, 0.7)",
           },
           "&.Mui-selected": {
-            backgroundColor: "rgba(255, 255, 255, 0.9)", // prawie białe tło
-            color: "#333", // ciemniejszy tekst dla kontrastu
+            backgroundColor: "rgba(255, 255, 255, 0.9)",
+            color: "#333",
             borderColor: "rgba(255, 255, 255, 0.9)",
             "&:hover": {
-              backgroundColor: "rgba(255, 255, 255, 1)", // pełna biel na hover
+              backgroundColor: "rgba(255, 255, 255, 1)",
             },
           },
           "&.Mui-disabled": {
-            color: "rgba(255, 255, 255, 0.3)", // bardzo jasny szary
+            color: "rgba(255, 255, 255, 0.3)",
             borderColor: "rgba(255, 255, 255, 0.1)",
           },
         },
-        marginBottom: "40px",
       }}
     />
   );

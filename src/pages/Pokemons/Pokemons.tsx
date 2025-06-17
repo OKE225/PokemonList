@@ -62,14 +62,45 @@ const Pokemons = () => {
         <SiteTitle />
         <Box
           id="pokemons-list"
-          width="70%"
-          margin="100px auto"
+          width={{
+            xs: "100%",
+            sm: "95%",
+            lg: "75%",
+          }}
+          sx={{
+            "@media (min-width: 1920px)": {
+              maxWidth: "calc(1920px * 0.75)",
+            },
+          }}
+          margin={{
+            xs: "25px auto 30px auto",
+            md: "40px auto",
+            lg: "50px auto",
+            xl: "60px auto",
+          }}
           color="white"
-          mt={5}>
+          mt={1}>
           {pokemonList ? (
-            <Grid container spacing={4} mt={15}>
+            <Grid
+              container
+              spacing={2}
+              justifyContent={{
+                xs: "center",
+                lg: "flex-start",
+              }}
+              mt={{
+                lg: 0,
+                xl: 10,
+              }}>
               {pokemonList.map((pokemon) => (
-                <Grid size={4} key={pokemon.name}>
+                <Grid
+                  size={{
+                    xs: 10,
+                    sm: 6,
+                    md: 5,
+                    lg: 4,
+                  }}
+                  key={pokemon.name}>
                   <PokemonCard name={pokemon.name} url={pokemon.url} />
                 </Grid>
               ))}
