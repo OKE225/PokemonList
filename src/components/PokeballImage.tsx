@@ -3,7 +3,7 @@ import pokeball from "../assets/pokeball.png";
 import { Box } from "@mui/material";
 
 type Props = {
-  size: string;
+  size: number;
   posX: string;
   posY: string;
 };
@@ -14,7 +14,12 @@ const PokeballImage: React.FC<Props> = ({ size, posX, posY }) => {
       position="fixed"
       left={posX}
       top={posY}
-      height={size}
+      height={{
+        xs: `${size * 0.4}%`,
+        md: `${size * 0.55}%`,
+        lg: `${size}%`,
+        // xl: `${size}%`,
+      }}
       sx={{
         opacity: 0.075,
         transform: "translate(-50%, -50%)",

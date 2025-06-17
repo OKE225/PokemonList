@@ -27,7 +27,14 @@ const Home = () => {
           id="home-content"
           display="flex"
           alignItems="center"
-          justifyContent="center"
+          flexDirection={{
+            xs: "column",
+            md: "row",
+          }}
+          justifyContent={{
+            xs: "flex-start",
+            md: "center",
+          }}
           height="calc(100% - 90px)">
           <Description />
           <CharizardImage />

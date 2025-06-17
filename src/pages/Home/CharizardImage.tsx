@@ -6,11 +6,22 @@ const CharizardImage = () => {
   return (
     <Box
       className="charizard-image"
-      width="60%"
+      width={{
+        xs: "135%",
+        sm: "100%",
+        md: "60%",
+      }}
       maxWidth={1500}
       position="relative"
-      right="-50px"
-      bottom="-100px">
+      right={{
+        xs: "0%",
+        md: "-5%",
+      }}
+      bottom={{
+        xs: "-5%",
+        sm: "-10%",
+        lg: "-5%",
+      }}>
       <img
         src={charizard}
         style={{
