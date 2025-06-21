@@ -18,7 +18,6 @@ const PokeballImage: React.FC<Props> = ({ size, posX, posY }) => {
         xs: `${size * 0.4}%`,
         md: `${size * 0.55}%`,
         lg: `${size}%`,
-        // xl: `${size}%`,
       }}
       sx={{
         opacity: 0.075,

@@ -2,9 +2,8 @@ import React from "react";
 import { Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
 import { Link } from "react-router-dom";
-import "./SiteTitle.scss";
 
-const SiteTitle = () => {
+const Title = () => {
   return (
     <Link to="/" className="site-title">
       <Typography
@@ -18,4 +17,4 @@ const SiteTitle = () => {
   );
 };
 
-export default SiteTitle;
+export default Title;

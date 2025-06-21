@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import React from "react";
-import charizard from "../../assets/charizard.png";
+import charizardImg from "../../assets/charizard.png";
 
-const CharizardImage = () => {
+const Charizard = () => {
   return (
     <Box
       className="charizard-image"
@@ -23,7 +23,7 @@ const CharizardImage = () => {
         lg: "-5%",
       }}>
       <img
-        src={charizard}
+        src={charizardImg}
         style={{
           width: "100%",
           userSelect: "none",
@@ -35,4 +35,4 @@ const CharizardImage = () => {
   );
 };
 
-export default CharizardImage;
+export default Charizard;

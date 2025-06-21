@@ -1,8 +1,8 @@
 import React from "react";
 import { Box } from "@mui/material";
-import SiteTitle from "../../components/SiteTitle";
+import Title from "../../components/Title";
 import BackgroundPokeballs from "../../components/BackgroundPokeballs";
-import CharizardImage from "./CharizardImage";
+import Charizard from "./Charizard";
 import Description from "./Description";
 
 const Home = () => {
@@ -22,7 +22,7 @@ const Home = () => {
         overflow="hidden"
         height="100vh"
         textAlign="center">
-        <SiteTitle />
+        <Title />
         <Box
           id="home-content"
           display="flex"
@@ -37,7 +37,7 @@ const Home = () => {
           }}
           height="calc(100% - 90px)">
           <Description />
-          <CharizardImage />
+          <Charizard />
         </Box>
       </Box>
     </Box>

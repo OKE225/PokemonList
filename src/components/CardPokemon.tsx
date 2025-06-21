@@ -1,17 +1,9 @@
-import {
-  Box,
-  Card,
-  CardMedia,
-  Chip,
-  CircularProgress,
-  Tooltip,
-  Typography,
-} from "@mui/material";
+import { Box, Card, CardMedia, Chip, CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import PokemonDialog from "./PokemonDialog";
+import DialogPokemon from "./DialogPokemon";
 
-import ScaleIcon from "@mui/icons-material/Scale";
-import ExpandIcon from "@mui/icons-material/Expand";
+import NamePokemon from "./NamePokemon";
+import InformationPokemon from "./InformationPokemon";
 
 interface Props {
   name: string;
@@ -35,7 +27,7 @@ interface PokemonData {
   }[];
 }
 
-const fnConvert = (value: number): string => `${value / 10}`;
+const fnConvert = (value: number): number => value / 10;
 
 const setTypeColor = (type: string) => {
   let colorType: string | null = null;
@@ -107,7 +99,7 @@ const setTypeColor = (type: string) => {
   return colorType;
 };
 
-const PokemonCard: React.FC<Props> = ({ name, url }) => {
+const CardPokemon: React.FC<Props> = ({ name, url }) => {
   const [pokemonDetails, setPokemonDetails] = useState<PokemonData | null>(
     null
   );
@@ -158,32 +150,13 @@ const PokemonCard: React.FC<Props> = ({ name, url }) => {
           image={pokemonDetails.sprites.other.home.front_default}
         />
         <Box textAlign="left" color="white" pt={5}>
-          <Typography variant="h4" textTransform="capitalize" gutterBottom>
-            {name}
-          </Typography>
-          <Box className="basic-info" display="flex" alignItems="center" mb={3}>
-            <Tooltip title="weight" placement="top" arrow followCursor>
-              <Box component="span" display="flex" mr={3}>
-                <ScaleIcon />
-                <Typography variant="body1" ml={1}>
-                  {convertWeight}kg
-                </Typography>
-              </Box>
-            </Tooltip>
-            <Tooltip title="height" placement="top" arrow followCursor>
-              <Box component="span" display="flex">
-                <ExpandIcon />
-                <Typography variant="body1" ml={1}>
-                  {convertHeight}m
-                </Typography>
-              </Box>
-            </Tooltip>
-          </Box>
+          <NamePokemon name={name} variant="h4" />
+          <InformationPokemon weight={convertWeight} height={convertHeight} />
           <Box className="type">{chipsList}</Box>
         </Box>
       </Card>
 
-      <PokemonDialog
+      <DialogPokemon
         isOpen={dialogIsOpen}
         onClose={() => setDialogIsOpen(false)}
         pokemon={{
@@ -199,4 +172,4 @@ const PokemonCard: React.FC<Props> = ({ name, url }) => {
   );
 };
 
-export default PokemonCard;
+export default CardPokemon;

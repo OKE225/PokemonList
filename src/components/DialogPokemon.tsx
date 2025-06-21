@@ -3,6 +3,8 @@ import React from "react";
 
 import ScaleIcon from "@mui/icons-material/Scale";
 import ExpandIcon from "@mui/icons-material/Expand";
+import NamePokemon from "./NamePokemon";
+import InformationPokemon from "./InformationPokemon";
 
 interface Props {
   isOpen: boolean;
@@ -10,14 +12,14 @@ interface Props {
   pokemon: {
     name: string;
     picture: string;
-    height: string;
-    weight: string;
+    height: number;
+    weight: number;
     typeColor: string;
   };
   chips: React.ReactNode[];
 }
 
-const PokemonDialog: React.FC<Props> = ({
+const DialogPokemon: React.FC<Props> = ({
   isOpen,
   onClose,
   pokemon,
@@ -36,27 +38,8 @@ const PokemonDialog: React.FC<Props> = ({
           flexDirection="column"
           color="white"
           mt={2}>
-          <Typography variant="h2" textTransform="capitalize" gutterBottom>
-            {pokemon.name}
-          </Typography>
-          <Box className="basic-info" display="flex" alignItems="center" mb={3}>
-            <Tooltip title="weight" placement="top" arrow followCursor>
-              <Box component="span" display="flex" mr={5}>
-                <ScaleIcon />
-                <Typography variant="body1" ml={1}>
-                  {pokemon.weight}kg
-                </Typography>
-              </Box>
-            </Tooltip>
-            <Tooltip title="height" placement="top" arrow followCursor>
-              <Box component="span" display="flex">
-                <ExpandIcon />
-                <Typography variant="body1" ml={1}>
-                  {pokemon.height}m
-                </Typography>
-              </Box>
-            </Tooltip>
-          </Box>
+          <NamePokemon name={pokemon.name} variant="h2" />
+          <InformationPokemon weight={pokemon.weight} height={pokemon.height} />
           <Box className="pokemon-types">{chips}</Box>
           <Box width="100%" m="0 auto" mb={3}>
             <img
@@ -76,4 +59,4 @@ const PokemonDialog: React.FC<Props> = ({
   );
 };
 
-export default PokemonDialog;
+export default DialogPokemon;
