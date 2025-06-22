@@ -8,7 +8,11 @@ interface Props {
 
 const NamePokemon: React.FC<Props> = ({ name, variant }) => {
   return (
-    <Typography variant={variant} textTransform="capitalize" gutterBottom>
+    <Typography
+      className="pokemon-name"
+      variant={variant}
+      textTransform="capitalize"
+      gutterBottom>
       {name}
     </Typography>
   );

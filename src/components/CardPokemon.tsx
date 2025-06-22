@@ -122,6 +122,7 @@ const CardPokemon: React.FC<Props> = ({ name, url }) => {
 
   const chipsList = pokemonDetails.types.map(({ type }, id) => (
     <Chip
+      className="type"
       key={id}
       label={type.name}
       sx={{
@@ -137,6 +138,7 @@ const CardPokemon: React.FC<Props> = ({ name, url }) => {
   return (
     <>
       <Card
+        className="card-container"
         sx={{
           background: `radial-gradient(circle at center bottom, ${firstTypeColor} 0%, black 60%)`,
           padding: 3,
@@ -145,14 +147,15 @@ const CardPokemon: React.FC<Props> = ({ name, url }) => {
         }}
         onClick={() => setDialogIsOpen(true)}>
         <CardMedia
+          className="card-image"
           component="img"
           image={pokemonDetails.sprites.other.home.front_default}
           draggable={false}
         />
-        <Box textAlign="left" color="white" pt={5}>
+        <Box className="pokemon-details" textAlign="left" color="white" pt={5}>
           <NamePokemon name={name} variant="h4" />
           <InformationPokemon weight={convertWeight} height={convertHeight} />
-          <Box className="type">{chipsList}</Box>
+          <Box className="types">{chipsList}</Box>
         </Box>
       </Card>
 

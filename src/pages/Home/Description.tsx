@@ -7,7 +7,7 @@ import DescriptionButtons from "./DescriptionButtons";
 const Description = () => {
   return (
     <Box
-      className="description"
+      id="description-container"
       display="flex"
       flexDirection="column"
       alignItems={{

@@ -9,13 +9,14 @@ import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 const DescriptionButtons = () => {
   return (
     <Box
-      className="button-box"
+      id="button-container"
       mr={{
         xs: 0,
         md: 2,
       }}
       mt={2}>
       <Button
+        className="btn"
         variant="outlined"
         startIcon={<InfoOutlineIcon />}
         sx={{
@@ -25,6 +26,7 @@ const DescriptionButtons = () => {
       </Button>
       <Link to="/list">
         <Button
+          className="btn"
           variant="contained"
           startIcon={<FormatListBulletedIcon />}
           sx={{

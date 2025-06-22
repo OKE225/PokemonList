@@ -5,6 +5,7 @@ import { grey } from "@mui/material/colors";
 const DescriptionText = () => {
   return (
     <Typography
+      id="description-text"
       variant="body1"
       alignItems="flex-end"
       color={grey[50]}

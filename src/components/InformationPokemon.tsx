@@ -11,19 +11,33 @@ interface Props {
 
 const InformationPokemon: React.FC<Props> = ({ weight, height }) => {
   return (
-    <Box className="basic-info" display="flex" alignItems="center" mb={3}>
-      <Tooltip title="weight" placement="top" arrow followCursor>
-        <Box component="span" display="flex" mr={3}>
+    <Box
+      className="pokemon-information"
+      display="flex"
+      alignItems="center"
+      mb={3}>
+      <Tooltip
+        className="tooltip"
+        title="weight"
+        placement="top"
+        arrow
+        followCursor>
+        <Box className="weight" component="span" display="flex" mr={3}>
           <ScaleIcon />
-          <Typography variant="body1" ml={1}>
+          <Typography className="value" variant="body1" ml={1}>
             {weight}kg
           </Typography>
         </Box>
       </Tooltip>
-      <Tooltip title="height" placement="top" arrow followCursor>
-        <Box component="span" display="flex">
+      <Tooltip
+        className="tooltip"
+        title="height"
+        placement="top"
+        arrow
+        followCursor>
+        <Box className="height" component="span" display="flex">
           <ExpandIcon />
-          <Typography variant="body1" ml={1}>
+          <Typography className="value" variant="body1" ml={1}>
             {height}m
           </Typography>
         </Box>

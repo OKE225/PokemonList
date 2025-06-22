@@ -47,6 +47,7 @@ const PokemonsPage = () => {
 
   return (
     <Box
+      id="pokemons-page-container"
       display="flex"
       justifyContent="center"
       position="absolute"
@@ -55,7 +56,7 @@ const PokemonsPage = () => {
       height="auto">
       <BackgroundPokeballs />
       <Box
-        id="pokemons"
+        id="pokemons-page-content"
         position="relative"
         textAlign="center"
         width="100%"

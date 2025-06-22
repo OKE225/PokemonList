@@ -15,7 +15,7 @@ interface Props {
 const PokemonsList: React.FC<Props> = ({ pokemonList }) => {
   return (
     <Box
-      id="pokemons-list"
+      id="pokemons-list-container"
       color="white"
       width={{
         xs: "100%",

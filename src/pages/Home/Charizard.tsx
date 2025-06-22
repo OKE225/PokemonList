@@ -6,7 +6,7 @@ import charizardImg from "../../assets/charizard.png";
 const Charizard = () => {
   return (
     <Box
-      className="charizard-image"
+      id="charizard-container"
       position="relative"
       right={{
         xs: "0%",
@@ -24,6 +24,7 @@ const Charizard = () => {
       }}
       maxWidth={1500}>
       <img
+        className="charizard-image"
         src={charizardImg}
         style={{
           width: "100%",

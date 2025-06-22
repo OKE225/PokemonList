@@ -15,8 +15,13 @@ const PageSelector: React.FC<Props> = ({
   const pageCount = Math.ceil(count / 20);
 
   return (
-    <Box display="flex" justifyContent="center" mb={4}>
+    <Box
+      id="page-selector-container"
+      display="flex"
+      justifyContent="center"
+      mb={4}>
       <Pagination
+        id="pagination"
         count={pageCount}
         page={currentPage}
         onChange={onPageChange}

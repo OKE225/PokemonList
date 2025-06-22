@@ -5,8 +5,9 @@ import { grey } from "@mui/material/colors";
 
 const Title = () => {
   return (
-    <Link to="/" className="site-title">
+    <Link to="/" className="title-container">
       <Typography
+        className="title-text"
         variant="h2"
         component="h1"
         fontWeight="bold"

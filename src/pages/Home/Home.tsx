@@ -9,6 +9,7 @@ import Charizard from "./Charizard";
 const Home = () => {
   return (
     <Box
+      id="home-container"
       display="flex"
       justifyContent="center"
       width="100%"
@@ -18,7 +19,7 @@ const Home = () => {
       }}>
       <BackgroundPokeballs />
       <Box
-        id="home"
+        id="home-section"
         position="absolute"
         textAlign="center"
         height="100vh"

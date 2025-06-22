@@ -12,6 +12,7 @@ type Props = {
 const PokeballImage: React.FC<Props> = ({ size, posX, posY }) => {
   return (
     <Box
+      className="pokeball-container"
       position="fixed"
       left={posX}
       top={posY}
@@ -27,6 +28,7 @@ const PokeballImage: React.FC<Props> = ({ size, posX, posY }) => {
       }}>
       <img
         src={pokeball}
+        className="pokeball-image"
         style={{
           height: "100%",
         }}
