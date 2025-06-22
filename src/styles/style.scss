@@ -1,7 +1,7 @@
 * {
+  box-sizing: border-box;
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
 }
 
 body {
@@ -13,17 +13,17 @@ body {
   background-color: #0a0a0a;
 
   a.site-title {
+    display: inline-block;
     position: relative;
     text-decoration: none;
-    display: inline-block;
     margin-top: 20px;
     z-index: 10;
   }
 }
 
 ::selection {
-  color: #00d5ff;
   background-color: #0065bb;
+  color: #00d5ff;
 }
 
 ::-webkit-scrollbar {
@@ -36,7 +36,6 @@ body {
 
 ::-webkit-scrollbar-thumb {
   background: gray;
-
   border-radius: 20px;
 }
 

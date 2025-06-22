@@ -1,5 +1,6 @@
-import { Box, CircularProgress, Grid } from "@mui/material";
 import React from "react";
+import { Box, CircularProgress, Grid } from "@mui/material";
+
 import CardPokemon from "../../components/CardPokemon";
 
 interface Props {
@@ -15,6 +16,7 @@ const PokemonsList: React.FC<Props> = ({ pokemonList }) => {
   return (
     <Box
       id="pokemons-list"
+      color="white"
       width={{
         xs: "100%",
         sm: "95%",
@@ -26,8 +28,7 @@ const PokemonsList: React.FC<Props> = ({ pokemonList }) => {
         md: "40px auto",
         lg: "50px auto",
         xl: "60px auto",
-      }}
-      color="white">
+      }}>
       {pokemonList ? (
         <Grid
           container

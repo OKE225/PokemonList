@@ -1,8 +1,6 @@
-import { Box, Dialog, DialogContent, Tooltip, Typography } from "@mui/material";
 import React from "react";
+import { Box, Dialog, DialogContent } from "@mui/material";
 
-import ScaleIcon from "@mui/icons-material/Scale";
-import ExpandIcon from "@mui/icons-material/Expand";
 import NamePokemon from "./NamePokemon";
 import InformationPokemon from "./InformationPokemon";
 

@@ -1,10 +1,10 @@
-import { Box, Button } from "@mui/material";
-import { blue } from "@mui/material/colors";
 import React from "react";
+import { Box, Button } from "@mui/material";
 import { Link } from "react-router-dom";
+import { blue } from "@mui/material/colors";
 
-import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 import InfoOutlineIcon from "@mui/icons-material/InfoOutline";
+import FormatListBulletedIcon from "@mui/icons-material/FormatListBulleted";
 
 const DescriptionButtons = () => {
   return (

@@ -1,9 +1,9 @@
-import { Box, Card, CardMedia, Chip, CircularProgress } from "@mui/material";
 import React, { useEffect, useState } from "react";
-import DialogPokemon from "./DialogPokemon";
+import { Box, Card, CardMedia, Chip, CircularProgress } from "@mui/material";
 
 import NamePokemon from "./NamePokemon";
 import InformationPokemon from "./InformationPokemon";
+import DialogPokemon from "./DialogPokemon";
 
 interface Props {
   name: string;
@@ -140,14 +140,14 @@ const CardPokemon: React.FC<Props> = ({ name, url }) => {
         sx={{
           background: `radial-gradient(circle at center bottom, ${firstTypeColor} 0%, black 60%)`,
           padding: 3,
-          cursor: "pointer",
           border: `2px solid ${firstTypeColor}`,
+          cursor: "pointer",
         }}
         onClick={() => setDialogIsOpen(true)}>
         <CardMedia
           component="img"
-          draggable={false}
           image={pokemonDetails.sprites.other.home.front_default}
+          draggable={false}
         />
         <Box textAlign="left" color="white" pt={5}>
           <NamePokemon name={name} variant="h4" />

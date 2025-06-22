@@ -1,5 +1,5 @@
-import { Box, Pagination } from "@mui/material";
 import React, { ChangeEvent } from "react";
+import { Box, Pagination } from "@mui/material";
 
 interface Props {
   count: number;
@@ -15,7 +15,7 @@ const PageSelector: React.FC<Props> = ({
   const pageCount = Math.ceil(count / 20);
 
   return (
-    <Box sx={{ display: "flex", justifyContent: "center", mb: 4 }}>
+    <Box display="flex" justifyContent="center" mb={4}>
       <Pagination
         count={pageCount}
         page={currentPage}

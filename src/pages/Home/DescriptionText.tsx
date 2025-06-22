@@ -1,17 +1,17 @@
+import React from "react";
 import { Typography } from "@mui/material";
 import { grey } from "@mui/material/colors";
-import React from "react";
 
 const DescriptionText = () => {
   return (
     <Typography
       variant="body1"
+      alignItems="flex-end"
       color={grey[50]}
       width={{
         xs: "auto",
         lg: "475px",
       }}
-      alignItems="flex-end"
       ml={{
         xs: 0,
         md: 5,

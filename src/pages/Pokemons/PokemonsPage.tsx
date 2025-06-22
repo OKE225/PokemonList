@@ -1,9 +1,10 @@
-import { Box } from "@mui/material";
 import React, { ChangeEvent, useEffect, useState } from "react";
-import Title from "../../components/Title";
+import { Box } from "@mui/material";
+
 import BackgroundPokeballs from "../../components/BackgroundPokeballs";
-import PageSelector from "./PageSelector";
+import Title from "../../components/Title";
 import PokemonsList from "./PokemonsList";
+import PageSelector from "./PageSelector";
 
 interface PokemonObject {
   name: string;
@@ -46,22 +47,21 @@ const PokemonsPage = () => {
 
   return (
     <Box
+      display="flex"
+      justifyContent="center"
+      position="absolute"
       bgcolor="#0a0a0a"
       width="100%"
-      height="auto"
-      position="absolute"
-      display="flex"
-      justifyContent="center">
+      height="auto">
       <BackgroundPokeballs />
       <Box
         id="pokemons"
-        width="100%"
         position="relative"
-        overflow="hidden"
-        textAlign="center">
+        textAlign="center"
+        width="100%"
+        overflow="hidden">
         <Title />
         <PokemonsList pokemonList={pokemonList} />
-
         {paginationData && (
           <PageSelector
             count={paginationData.count}

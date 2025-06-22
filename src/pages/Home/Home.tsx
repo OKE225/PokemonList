@@ -1,27 +1,28 @@
 import React from "react";
 import { Box } from "@mui/material";
-import Title from "../../components/Title";
+
 import BackgroundPokeballs from "../../components/BackgroundPokeballs";
-import Charizard from "./Charizard";
+import Title from "../../components/Title";
 import Description from "./Description";
+import Charizard from "./Charizard";
 
 const Home = () => {
   return (
     <Box
-      sx={{
-        background: "radial-gradient(#E14318, #EE8328)",
-      }}
+      display="flex"
+      justifyContent="center"
       width="100%"
       height="100vh"
-      display="flex"
-      justifyContent="center">
+      sx={{
+        background: "radial-gradient(#E14318, #EE8328)",
+      }}>
       <BackgroundPokeballs />
       <Box
         id="home"
         position="absolute"
-        overflow="hidden"
+        textAlign="center"
         height="100vh"
-        textAlign="center">
+        overflow="hidden">
         <Title />
         <Box
           id="home-content"
