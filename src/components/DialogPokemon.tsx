@@ -23,6 +23,8 @@ const DialogPokemon: React.FC<Props> = ({
   pokemon,
   chips,
 }) => {
+  const { name, picture, height, weight, typeColor } = pokemon;
+
   return (
     <Dialog
       className="dialog-container"
@@ -31,8 +33,8 @@ const DialogPokemon: React.FC<Props> = ({
       maxWidth="xs">
       <DialogContent
         sx={{
-          background: `radial-gradient(circle at center bottom, ${pokemon.typeColor} 0%, rgba(0, 0, 0, 0.9) 50%)`,
-          border: `2px solid ${pokemon.typeColor}`,
+          background: `radial-gradient(circle at center bottom, ${typeColor} 0%, rgba(0, 0, 0, 0.9) 50%)`,
+          border: `2px solid ${typeColor}`,
         }}>
         <Box
           className="dialog-content"
@@ -41,8 +43,8 @@ const DialogPokemon: React.FC<Props> = ({
           flexDirection="column"
           color="white"
           mt={2}>
-          <NamePokemon name={pokemon.name} variant="h2" />
-          <InformationPokemon weight={pokemon.weight} height={pokemon.height} />
+          <NamePokemon name={name} variant="h2" />
+          <InformationPokemon weight={weight} height={height} />
           <Box className="types">{chips}</Box>
           <Box
             className="dialog-image-container"
@@ -51,12 +53,12 @@ const DialogPokemon: React.FC<Props> = ({
             mb={3}>
             <img
               className="pokemon-dialog-image"
-              src={pokemon.picture}
-              alt={pokemon.name}
+              src={picture}
+              alt={name}
               style={{
                 width: "100%",
                 userSelect: "none",
-                filter: `drop-shadow(0 0 20px ${pokemon.typeColor})`,
+                filter: `drop-shadow(0 0 20px ${typeColor})`,
               }}
               draggable={false}
             />

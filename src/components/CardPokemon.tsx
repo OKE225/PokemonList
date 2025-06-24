@@ -45,24 +45,30 @@ const CardPokemon: React.FC<Props> = ({ name, url }) => {
     return <CircularProgress color="inherit" />;
   }
 
-  const convertHeight = convertValue(pokemonDetails.height);
-  const convertWeight = convertValue(pokemonDetails.weight);
-  const firstTypeColor = setTypeColor(pokemonDetails.types[0].type.name);
+  const { height, weight, types } = pokemonDetails;
+  const { front_default } = pokemonDetails.sprites.other.home;
 
-  const chipsList = pokemonDetails.types.map(({ type }, id) => (
-    <Chip
-      className="type"
-      key={id}
-      label={type.name}
-      sx={{
-        background: setTypeColor(type.name),
-        color: "white",
-        margin: "0 4px",
-        boxShadow: "0 0 15px -5px #000000",
-        textTransform: "capitalize",
-      }}
-    />
-  ));
+  const convertHeight = convertValue(height);
+  const convertWeight = convertValue(weight);
+  const firstTypeColor = setTypeColor(types[0].type.name);
+
+  const chipsList = types.map(({ type }, id) => {
+    const { name } = type;
+    return (
+      <Chip
+        className="type"
+        key={id}
+        label={name}
+        sx={{
+          background: setTypeColor(name),
+          color: "white",
+          margin: "0 4px",
+          boxShadow: "0 0 15px -5px #000000",
+          textTransform: "capitalize",
+        }}
+      />
+    );
+  });
 
   return (
     <>
@@ -78,7 +84,7 @@ const CardPokemon: React.FC<Props> = ({ name, url }) => {
         <CardMedia
           className="card-image"
           component="img"
-          image={pokemonDetails.sprites.other.home.front_default}
+          image={front_default}
           draggable={false}
         />
         <Box className="pokemon-details" textAlign="left" color="white" pt={5}>
@@ -95,7 +101,7 @@ const CardPokemon: React.FC<Props> = ({ name, url }) => {
           name: name,
           height: convertHeight,
           weight: convertWeight,
-          picture: pokemonDetails.sprites.other.home.front_default,
+          picture: front_default,
           typeColor: firstTypeColor,
         }}
         chips={chipsList}

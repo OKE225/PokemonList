@@ -41,7 +41,7 @@ const PokemonsList: React.FC<Props> = ({ pokemonList }) => {
             lg: 0,
             xl: 10,
           }}>
-          {pokemonList.map((pokemon) => (
+          {pokemonList.map(({ name, url }) => (
             <Grid
               size={{
                 xs: 10,
@@ -49,8 +49,8 @@ const PokemonsList: React.FC<Props> = ({ pokemonList }) => {
                 md: 5,
                 lg: 4,
               }}
-              key={pokemon.name}>
-              <CardPokemon name={pokemon.name} url={pokemon.url} />
+              key={name}>
+              <CardPokemon name={name} url={url} />
             </Grid>
           ))}
         </Grid>
