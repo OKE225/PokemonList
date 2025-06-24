@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Box, Card, CardMedia, Chip, CircularProgress } from "@mui/material";
+import { convertValue, setTypeColor } from "../utils";
 
 import NamePokemon from "./NamePokemon";
 import InformationPokemon from "./InformationPokemon";
@@ -27,78 +28,6 @@ interface PokemonData {
   }[];
 }
 
-const fnConvert = (value: number): number => value / 10;
-
-const setTypeColor = (type: string) => {
-  let colorType: string | null = null;
-  switch (type) {
-    case "normal":
-      colorType = "#9fa19f";
-      break;
-    case "fighting":
-      colorType = "#C22E28";
-      break;
-    case "flying":
-      colorType = "#A98FF3";
-      break;
-    case "poison":
-      colorType = "#9141cb";
-      break;
-    case "ground":
-      colorType = "#E2BF65";
-      break;
-    case "rock":
-      colorType = "#afa981";
-      break;
-    case "bug":
-      colorType = "#A6B91A";
-      break;
-    case "ghost":
-      colorType = "#735797";
-      break;
-    case "steel":
-      colorType = "#60a1b8";
-      break;
-    case "fire":
-      colorType = "#EE8130";
-      break;
-    case "water":
-      colorType = "#2980ef";
-      break;
-    case "grass":
-      colorType = "#7AC74C";
-      break;
-    case "electric":
-      colorType = "#fac000";
-      break;
-    case "psychic":
-      colorType = "#F95587";
-      break;
-    case "ice":
-      colorType = "#3dcef3";
-      break;
-    case "dragon":
-      colorType = "#6F35FC";
-      break;
-    case "dark":
-      colorType = "#624d4e";
-      break;
-    case "fairy":
-      colorType = "#ef70ef";
-      break;
-    case "stellar":
-      colorType = "#40b5a5";
-      break;
-    case "unknown":
-      colorType = "#68a090";
-      break;
-    default:
-      colorType = "#808080";
-      break;
-  }
-  return colorType;
-};
-
 const CardPokemon: React.FC<Props> = ({ name, url }) => {
   const [pokemonDetails, setPokemonDetails] = useState<PokemonData | null>(
     null
@@ -116,8 +45,8 @@ const CardPokemon: React.FC<Props> = ({ name, url }) => {
     return <CircularProgress color="inherit" />;
   }
 
-  const convertHeight = fnConvert(pokemonDetails.height);
-  const convertWeight = fnConvert(pokemonDetails.weight);
+  const convertHeight = convertValue(pokemonDetails.height);
+  const convertWeight = convertValue(pokemonDetails.weight);
   const firstTypeColor = setTypeColor(pokemonDetails.types[0].type.name);
 
   const chipsList = pokemonDetails.types.map(({ type }, id) => (
