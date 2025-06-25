@@ -1,46 +1,88 @@
-# Getting Started with Create React App
+# ⚡ PokemonList
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+![GitHub License](https://img.shields.io/github/license/OKE225/PokemonList?style=for-the-badge&labelColor=red&color=tomato)
+![Static Badge](https://img.shields.io/badge/OKE225-blue?style=for-the-badge&label=Author&labelColor=steelblue)
 
-## Available Scripts
+This is a modern and responsive landing page about Pokémon, made with React, TypeScript, and the MUI library. It has a clean and simple design that works well on different devices. The app has a main page and a subpage with a list of Pokémon. The Pokémon data is loaded from an external API and shown clearly. Thanks to pagination, users can see a few Pokémon at a time instead of the whole list. React Router allows smooth switching between pages without reloading, making the app easy and fast to use.
 
-In the project directory, you can run:
+![PokemonList Website](./src/assets/docs/pokemon_list.png)
 
-### `npm start`
+[**➥ Live**](https://oke225.github.io/PokemonList/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## ⚙️ Technologies Used
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- React
+- TypeScript
+- React Router
+- MUI ( Material UI )
+- API ( PokeAPI )
+- Sass ( SCSS )
+- JavaScript
+- CSS
+- HTML
 
-### `npm test`
+## 💻 Features
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **API Data Fetching** - The app fetches Pokémon data from the PokeAPI, providing up-to-date and detailed information about each Pokémon.
 
-### `npm run build`
+- **Pagination** - Pagination uses a Material UI component to split the Pokémon list into smaller parts, showing only a limited number per page for better performance and usability.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **React Router** - React Router enables smooth, fast navigation between pages without reloading the whole site.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Dialog Component** - Clicking a Pokémon card opens an MUI Dialog that displays more detailed information without leaving the current page.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- **Responsive design** - Achieved with Material-UI, the website automatically adjusts to different screen sizes, providing a comfortable browsing experience on both mobile and desktop devices.
 
-### `npm run eject`
+- **Material UI (MUI) design** - The site uses Material UI for a clean, modern look with consistent styling and a responsive layout that works well on all devices, ensuring a polished and user-friendly interface.
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 📘 Local Setup
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+1. **Clone the Repository:**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+   Open your terminal and clone the GitHub repository using:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+   ```bash
+   git clone https://github.com/OKE225/PokemonList.git
+   ```
 
-## Learn More
+2. **Install Dependencies:**
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   Navigate to the project directory:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+   ```bash
+   cd PokemonList
+   ```
+
+   Then install all dependencies using npm or yarn:
+
+   ```bash
+   npm install
+   ```
+
+   or
+
+   ```bash
+   yarn install
+   ```
+
+3. **Start the Application:**
+
+   To run the application locally, use:
+
+   ```bash
+   npm start
+   ```
+
+   or
+
+   ```bash
+   yarn start
+   ```
+
+## 📄 License
+
+The [MIT License](./LICENSE) (MIT). Please see License File for more information.
+
+## 🔎 See Also
+
+[GitHub profile](https://github.com/OKE225)
