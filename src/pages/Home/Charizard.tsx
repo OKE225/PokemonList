@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-import charizardImg from "../../assets/charizard.png";
+import charizardImg from "../../assets/images/charizard.png";
 
 const Charizard = () => {
   return (

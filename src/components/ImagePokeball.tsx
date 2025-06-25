@@ -1,7 +1,7 @@
 import React from "react";
 import { Box } from "@mui/material";
 
-import pokeball from "../assets/pokeball.png";
+import pokeball from "../assets/images/pokeball.png";
 
 type Props = {
   size: number;
